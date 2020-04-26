@@ -7,7 +7,7 @@ export async function* decrypt(
   ciphertext: AsyncIterable<Uint8Array>,
   options = defaultOptions
 ) {
-  const { algorithm, authTagLength, nonceLength } = options;
+  const { algorithm, authTagLength, nonceLength, associatedData } = options;
 
   const chunksize = 1024 * 64; // 64K
 
@@ -20,7 +20,11 @@ export async function* decrypt(
       authTagLength,
     });
 
-    cipher.setAAD(Buffer.from([chunkIndex++]), {
+    let aad = Buffer.from([chunkIndex++]);
+    if (associatedData) {
+      aad = Buffer.concat([aad, associatedData]);
+    }
+    cipher.setAAD(aad, {
       plaintextLength: chunk.length,
     });
     cipher.setAuthTag(authTag);

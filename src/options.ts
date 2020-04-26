@@ -5,6 +5,7 @@ export type Options = {
   nonceLength: number;
   authTagLength: number;
   chunkSize: number;
+  associatedData?: Uint8Array;
 };
 
 export const defaultOptions: Options = {

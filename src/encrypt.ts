@@ -7,7 +7,7 @@ export async function* encrypt(
   plaintext: AsyncIterable<Uint8Array>,
   options = defaultOptions
 ): AsyncIterable<Uint8Array> {
-  const { algorithm, authTagLength, nonceLength } = options;
+  const { algorithm, authTagLength, nonceLength, associatedData } = options;
 
   const chunksize = 1024 * 64 - nonceLength - authTagLength; // 64K - nonce - tagLength
 
@@ -19,7 +19,11 @@ export async function* encrypt(
       authTagLength,
     });
 
-    cipher.setAAD(Buffer.from([chunkIndex++]), {
+    let aad = Buffer.from([chunkIndex++]);
+    if (associatedData) {
+      aad = Buffer.concat([aad, associatedData]);
+    }
+    cipher.setAAD(aad, {
       plaintextLength: chunk.length,
     });
 
