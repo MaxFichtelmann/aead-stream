@@ -1,5 +1,5 @@
 import { chunkify } from "./chunkify";
-import { createDecipheriv, DecipherCCM, CipherCCMTypes } from "crypto";
+import { createDecipheriv, CipherCCMTypes } from "crypto";
 import { defaultOptions } from "./options";
 
 export async function* decrypt(
