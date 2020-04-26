@@ -7,12 +7,16 @@ export async function* decrypt(
   ciphertext: AsyncIterable<Uint8Array>,
   options = defaultOptions
 ) {
-  const { algorithm, authTagLength, nonceLength, associatedData } = options;
-
-  const chunksize = 1024 * 64; // 64K
+  const {
+    algorithm,
+    authTagLength,
+    nonceLength,
+    associatedData,
+    chunkSize,
+  } = options;
 
   let chunkIndex = 0;
-  for await (const chunk of chunkify(chunksize, ciphertext)) {
+  for await (const chunk of chunkify(chunkSize, ciphertext)) {
     const nonce = chunk.slice(0, nonceLength);
     const authTag = chunk.slice(-authTagLength);
 

@@ -9,10 +9,10 @@ export async function* encrypt(
 ): AsyncIterable<Uint8Array> {
   const { algorithm, authTagLength, nonceLength, associatedData } = options;
 
-  const chunksize = 1024 * 64 - nonceLength - authTagLength; // 64K - nonce - tagLength
+  const chunkSize = options.chunkSize - nonceLength - authTagLength;
 
   let chunkIndex = 0;
-  for await (const chunk of chunkify(chunksize, plaintext)) {
+  for await (const chunk of chunkify(chunkSize, plaintext)) {
     const nonce = randomBytes(nonceLength);
 
     let cipher = createCipheriv(algorithm as CipherCCMTypes, key, nonce, {
