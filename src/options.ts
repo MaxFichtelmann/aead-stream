@@ -8,7 +8,7 @@ export type Options = {
 };
 
 export const defaultOptions: Options = {
-  algorithm: "aes-256-gcm",
+  algorithm: "chacha20-poly1305",
   nonceLength: 12,
   authTagLength: 16,
   chunkSize: 64 * 1024, // 64K

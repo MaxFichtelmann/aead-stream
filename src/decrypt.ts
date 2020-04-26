@@ -1,5 +1,5 @@
 import { chunkify } from "./chunkify";
-import { createDecipheriv, DecipherCCM } from "crypto";
+import { createDecipheriv, DecipherCCM, CipherCCMTypes } from "crypto";
 import { defaultOptions } from "./options";
 
 export async function* decrypt(
@@ -16,7 +16,9 @@ export async function* decrypt(
     const nonce = chunk.slice(0, nonceLength);
     const authTag = chunk.slice(-authTagLength);
 
-    let cipher = createDecipheriv(algorithm, key, nonce) as DecipherCCM;
+    let cipher = createDecipheriv(algorithm as CipherCCMTypes, key, nonce, {
+      authTagLength,
+    });
 
     cipher.setAAD(Buffer.from([chunkIndex++]), {
       plaintextLength: chunk.length,
