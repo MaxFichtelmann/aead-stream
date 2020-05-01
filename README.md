@@ -14,18 +14,18 @@ $ npm install aead-stream
 
 ### `encrypt(key, plaintext[, options])`
 
-- `key` [<Uint8Array>](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) the symmetric key used to encrypt the data
-- `plaintext` [<AsyncIterable<Uint8Array>>](https://tc39.es/ecma262/#sec-asynciterable-interface) a stream of Uint8Arrays with the plaintext data
-- `options` [<Object>](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) options (see [default options](#default-options))
-  - `algorithm` [<string>](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) a valid algorithm for [`crypto.createCipheriv`](https://nodejs.org/docs/latest-v13.x/api/crypto.html#crypto_crypto_createcipheriv_algorithm_key_iv_options)
-  - `nonceLength` [<number>](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) the length of generated nonces in bytes
-  - `authTagLength` [<number>](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) the length of the authentication tag
-  - `chunkSize` [<number>](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) the size of a ciphertext chunk (including nonce and authentication tag)
-  - `associatedData` [<Uint8Array>](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) optional additional data to be used for authentication tag calculation
+- `key` [\<Uint8Array\>](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) the symmetric key used to encrypt the data
+- `plaintext` [\<AsyncIterable<Uint8Array\>\>](https://tc39.es/ecma262/#sec-asynciterable-interface) a stream of Uint8Arrays with the plaintext data
+- `options` [\<Object\>](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) options - see [default options](#default-options)
+  - `algorithm` [\<string\>](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) a valid algorithm for [`crypto.createCipheriv`](https://nodejs.org/docs/latest-v13.x/api/crypto.html#crypto_crypto_createcipheriv_algorithm_key_iv_options)
+  - `nonceLength` [\<number\>](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) the length of generated nonces in bytes
+  - `authTagLength` [\<number\>](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) the length of the authentication tag
+  - `chunkSize` [\<number\>](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) the size of a ciphertext chunk (including nonce and authentication tag)
+  - `associatedData` [\<Uint8Array\>](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) optional additional data to be used for authentication tag calculation
 
 #### Example
 
-<details open>
+<details>
 <summary>Click to view</summary>
 
 ```javascript
