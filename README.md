@@ -7,7 +7,7 @@ aead-stream is a simple API to perform authenticated symmetric encrytion on data
 ## Install
 
 ```
-$ npm install aead-stream
+npm install aead-stream
 ```
 
 ## Usage
