@@ -1,4 +1,4 @@
-import { chunkify } from "../src/index";
+import { chunkify } from "../src/chunkify";
 import {} from "jest";
 
 test("empty input", async () => {
