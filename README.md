@@ -24,7 +24,7 @@ $ npm install aead-stream
   - `associatedData` [\<Uint8Array\>](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) optional additional data to be used for authentication tag calculation
 
 <details>
-<summary>Click to view example</summary>
+<summary><i>Click to view example</i></summary>
 
 ```javascript
 const { encrypt } = require("aead-stream");
