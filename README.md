@@ -23,8 +23,10 @@ $ npm install aead-stream
   - `chunkSize` [<number>](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) the size of a ciphertext chunk (including nonce and authentication tag)
   - `associatedData` [<Uint8Array>](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) optional additional data to be used for authentication tag calculation
 
+Example
+
 <details>
-<summary>Example (Click to expand!)</summary>
+<summary>Click to view</summary>
 
 ```javascript
 const { encrypt } = require("aead-stream");
