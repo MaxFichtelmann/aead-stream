@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "description": "Authenticated encryption on arbitrary large files",
   "main": "dist/index.js",
-  "type": "module",
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest --collect-coverage",
@@ -14,8 +13,13 @@
     "type": "git",
     "url": "git+https://github.com/MaxFichtelmann/aead-stream.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "aes-gcm",
+    "aead",
+    "chacha20-poly1305",
+    "crypto"
+  ],
+  "author": "Max Fichtelmann <max.fichtelmann@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/MaxFichtelmann/aead-stream/issues"
@@ -31,5 +35,8 @@
     "jest": "^25.4.0",
     "ts-jest": "^25.4.0",
     "typescript": "^3.8.3"
-  }
+  },
+  "files": [
+    "dist/"
+  ]
 }
