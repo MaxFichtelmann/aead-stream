@@ -22,6 +22,7 @@ npm install aead-stream
   - `authTagLength` [\<number\>](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) the length of the authentication tag
   - `chunkSize` [\<number\>](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) the size of a ciphertext chunk (including nonce and authentication tag)
   - `associatedData` [\<Uint8Array\>](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) **optional** additional data to be used for authentication tag calculation
+- Returns: [\<AsyncIterable<Uint8Array\>\>](https://tc39.es/ecma262/#sec-asynciterable-interface) a stream of Uint8Arrays with the ciphertext data
 
 <details>
 <summary><i>Click to view example</i></summary>
@@ -55,6 +56,7 @@ async function encyptFile(key, filepath) {
   - `authTagLength` [\<number\>](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) the length of the authentication tag
   - `chunkSize` [\<number\>](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) the size of a ciphertext chunk (including nonce and authentication tag)
   - `associatedData` [\<Uint8Array\>](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) **optional** additional data to be used for authentication tag calculation
+- Returns: [\<AsyncIterable<Uint8Array\>\>](https://tc39.es/ecma262/#sec-asynciterable-interface) a stream of Uint8Arrays with the plaintext data
 
 <details>
 <summary><i>Click to view example</i></summary>
