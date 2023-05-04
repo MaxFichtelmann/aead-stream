@@ -1,5 +1,4 @@
 import { chunkify } from "../src/chunkify";
-import {} from "jest";
 
 test("empty input", async () => {
   async function* generator(): AsyncIterable<Uint8Array> {}
